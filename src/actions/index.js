@@ -30,7 +30,7 @@ export  const fetchPostAndUsers = () => async (dispatch, getState) =>
         Lodash.chain(getState().posts)
         .map('userId') // get Only "userId" property
         .uniq() // apply the distinct in "userId" property
-        .forEach(id => dispatch(fetchUser(id))) // call the function "fetchUser" using the "dispatch" soul they will passa for "Thunk", this call is made without "Async" because we dont need wait this call
+        .forEach(id => dispatch(fetchUser(id))) // called the function "fetchUser" using the "dispatch" method, so they will pass for the "Thunk" middleware, this call is made without "Async" because we dont need wait this call.
         .value(); // Execute the "chain" method
 }
 
